@@ -269,7 +269,7 @@ namespace kdt
 			knnSearchRecursive(query, node->next[dir], queue, k);
 
 			const double diff = fabs(query[axis] - train[axis]);
-			if (queue.size() < k || diff < queue.back().first)
+			if ((int)queue.size() < k || diff < queue.back().first)
 				knnSearchRecursive(query, node->next[!dir], queue, k);
 		}
 
