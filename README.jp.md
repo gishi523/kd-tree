@@ -11,9 +11,9 @@ k-d treeのc++実装です
 - k-d treeのc++実装です
 - ヘッダをインクルードするだけで使えます
 - 以下の近傍探索機能を提供します
-  - 最近傍探索(Nearest neighbor search)
-  - k-最近傍探索(K-nearest neighbor search)
-  - 半径内に含まれる近傍の探索(Radius search)
+  - 最近傍探索 (Nearest neighbor search)
+  - k-最近傍探索 (K-nearest neighbor search)
+  - 半径内に含まれる近傍の探索 (Radius search)
 
 ## KDTreeクラスの使い方
 - KDTreeクラスはユーザー定義のPoint型をテンプレートパラメータにとります
@@ -57,7 +57,7 @@ int main()
 ```
 
 ## Requirement
-- OpenCV(サンプルコードのみ)
+- OpenCV (サンプルコードのみ)
 
 ## サンプルコード
 ### ビルド方法
