@@ -130,7 +130,8 @@ namespace kdt
 
 			void push(const T& val)
 			{
-				auto it = std::find_if(std::begin(elements_), std::end(elements_), [&](const T& element) { return Compare()(val, element); });
+				auto it = std::find_if(std::begin(elements_), std::end(elements_),
+					[&](const T& element){ return Compare()(val, element); });
 				elements_.insert(it, val);
 
 				if (elements_.size() > bound_)
@@ -138,7 +139,7 @@ namespace kdt
 			}
 
 			const T& back() const { return elements_.back(); };
-			T operator[](size_t index) const { return elements_[index]; }
+			const T& operator[](size_t index) const { return elements_[index]; }
 			size_t size() const { return elements_.size(); }
 
 		private:
