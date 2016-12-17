@@ -2,7 +2,6 @@
 #include <iostream>
 #include <array>
 #include <vector>
-#include <algorithm>
 
 #include "kdtree.h"
 
