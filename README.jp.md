@@ -3,9 +3,9 @@ k-d treeのc++実装です
 
 ====
 
-<img src=https://dl.dropboxusercontent.com/u/36775496/kdtree_I0.png width=256>
-<img src=https://dl.dropboxusercontent.com/u/36775496/kdtree_I1.png width=256>
-<img src=https://dl.dropboxusercontent.com/u/36775496/kdtree_I2.png width=256>
+<img src=https://github.com/gishi523/kd-tree/wiki/images/kdtree_I0.png width=256>
+<img src=https://github.com/gishi523/kd-tree/wiki/images/kdtree_I1.png width=256>
+<img src=https://github.com/gishi523/kd-tree/wiki/images/kdtree_I2.png width=256>
 
 ## 概要
 - k-d treeのc++実装です
