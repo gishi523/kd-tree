@@ -1,9 +1,7 @@
 # kd-tree
 A c++ implementation of k-d tree
 
-<img src=https://github.com/gishi523/kd-tree/wiki/images/kdtree_I0.png width=256>
-<img src=https://github.com/gishi523/kd-tree/wiki/images/kdtree_I1.png width=256>
-<img src=https://github.com/gishi523/kd-tree/wiki/images/kdtree_I2.png width=256>
+<img src=https://github.com/gishi523/kd-tree/wiki/images/kdtree_I0.png width=256> <img src=https://github.com/gishi523/kd-tree/wiki/images/kdtree_I1.png width=256> <img src=https://github.com/gishi523/kd-tree/wiki/images/kdtree_I2.png width=256>
 
 ## Description
 - A c++ implementation of k-d tree
