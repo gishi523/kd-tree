@@ -227,7 +227,7 @@ namespace kdt
 			return sqrt(dist);
 		}
 
-		/** @brief Searches the nearest neighbors recursively.
+		/** @brief Searches the nearest neighbor recursively.
 		*/
 		void nnSearchRecursive(const PointT& query, const Node* node, int *guess, double *minDist) const
 		{
