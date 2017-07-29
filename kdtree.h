@@ -63,7 +63,7 @@ namespace kdt
 			return true;
 		}
 
-		/** @brief Searches the nearest neigbor.
+		/** @brief Searches the nearest neighbor.
 		*/
 		int nnSearch(const PointT& query, double* minDist = nullptr) const
 		{
@@ -78,7 +78,7 @@ namespace kdt
 			return guess;
 		}
 
-		/** @brief Searches k-nearest neigbors.
+		/** @brief Searches k-nearest neighbors.
 		*/
 		std::vector<int> knnSearch(const PointT& query, int k) const
 		{
@@ -92,7 +92,7 @@ namespace kdt
 			return indices;
 		}
 
-		/** @brief Searches neigbors within radius.
+		/** @brief Searches neighbors within radius.
 		*/
 		std::vector<int> radiusSearch(const PointT& query, double radius) const
 		{
@@ -114,7 +114,7 @@ namespace kdt
 			Node() : idx(-1), axis(-1) { next[0] = next[1] = nullptr; }
 		};
 
-		/** @brief k-d tree exeption.
+		/** @brief k-d tree exception.
 		*/
 		class Exception : public std::exception { using std::exception::exception; };
 
@@ -227,7 +227,7 @@ namespace kdt
 			return sqrt(dist);
 		}
 
-		/** @brief Searches the nearest neigbor recursively.
+		/** @brief Searches the nearest neighbor recursively.
 		*/
 		void nnSearchRecursive(const PointT& query, const Node* node, int *guess, double *minDist) const
 		{
@@ -252,7 +252,7 @@ namespace kdt
 				nnSearchRecursive(query, node->next[!dir], guess, minDist);
 		}
 
-		/** @brief Searches k-nearest neigbors recursively.
+		/** @brief Searches k-nearest neighbors recursively.
 		*/
 		void knnSearchRecursive(const PointT& query, const Node* node, KnnQueue& queue, int k) const
 		{
@@ -273,7 +273,7 @@ namespace kdt
 				knnSearchRecursive(query, node->next[!dir], queue, k);
 		}
 
-		/** @brief Searches neigbors within radius.
+		/** @brief Searches neighbors within radius.
 		*/
 		void radiusSearchRecursive(const PointT& query, const Node* node, std::vector<int>& indices, double radius) const
 		{
