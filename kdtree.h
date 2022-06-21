@@ -20,6 +20,31 @@ namespace kdt
 		KDTree() : root_(nullptr) {};
 		KDTree(const std::vector<PointT>& points) : root_(nullptr) { build(points); }
 
+		KDTree(const KDTree &other) : root_(nullptr) 
+		{
+			this->build(other.points_);
+		}
+		
+		KDTree(KDTree &&other)
+		{
+			this->root_ = std::exchange(other.root_, nullptr);
+			this->points_ = std::move(other.points_);
+		}
+
+		KDTree &operator=(KDTree &&other)
+		{
+			this->root_ = std::exchange(other.root_, nullptr);
+			this->points_ = std::move(other.points_);
+			return *this;
+		}
+
+		KDTree &operator=(const KDTree &other)
+		{
+			this->root_ = nullptr;
+			this->build(other.points_);
+			return *this;
+		}
+
 		/** @brief The destructor.
 		*/
 		~KDTree() { clear(); }
