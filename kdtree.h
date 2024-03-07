@@ -6,6 +6,9 @@
 #include <algorithm>
 #include <exception>
 #include <functional>
+#ifdef _OPENMP
+#include <omp.h>
+#endif
 
 namespace kdt
 {
@@ -35,7 +38,13 @@ namespace kdt
 			std::vector<int> indices(points.size());
 			std::iota(std::begin(indices), std::end(indices), 0);
 
-			root_ = buildRecursive(indices.data(), (int)points.size(), 0);
+			#pragma omp parallel
+			{
+				#pragma omp single
+				{
+					root_ = buildRecursive(indices.data(), (int)points.size(), 0);
+				}
+			}
 		}
 
 		/** @brief Clears k-d tree.
@@ -170,8 +179,13 @@ namespace kdt
 			node->idx = indices[mid];
 			node->axis = axis;
 
+			#pragma omp task shared(node)
 			node->next[0] = buildRecursive(indices, mid, depth + 1);
+
+			#pragma omp task shared(node)
 			node->next[1] = buildRecursive(indices + mid + 1, npoints - mid - 1, depth + 1);
+
+			#pragma omp taskwait
 
 			return node;
 		}
